@@ -36,58 +36,67 @@ interface Article {
 const articles: Article[] = [
   {
     isRightSection: true,
-    title: "Delivering Expert Guidance",
+    title: "Computers",
     subTitle:
-      "Embarking on a construction project can be overwhelming. With our professional consultation services, we guide you through every stage, ensuring you make informed decisions. Whether you are a DIY enthusiast or a skilled contractor, our experts are on hand to offer tailored advice on product selection, project scope, and compliance with local regulations.",
+      "Whether your computer is running slow, has hardware issues, or needs a complete overhaul, our expert technicians provide diagnostic, repair, and upgrade services to keep your system running smoothly. From motherboard replacements to data recovery, we’ve got you covered.",
     single: false,
     imgOne: blueprints,
-    imgOneAlt: "Blueprints and digital tablet with construction plans.",
+    imgOneAlt: "Technician diagnosing a computer motherboard issue.",
     imgTwo: personWorking,
-    imgTwoAlt: "Person working in the office",
+    imgTwoAlt: "Person working on a computer repair at a desk.",
+    btnExists: true,
+    btnTitle: "Learn more",
+    btnURL: "#",
   },
   {
     isRightSection: false,
-    title: "Transforming Designs into Reality",
+    title: "Arcade Machines",
     subTitle:
-      "Our skilled craftsmen bring precision and excellence to every construction project. From minor installations to substantial structural work, ScrewFast offers reliable construction services to turn your plans into tangible outcomes. We ensure the highest standards of safety and workmanship, utilizing top-quality tools and materials from our extensive inventory.",
+      "Specializing in both vintage and modern arcade machines, we offer repair services that cover everything from CRT monitor adjustments to circuit board restoration. Get your machine back to perfect working order with our precise and reliable repair services.",
     img: beforeAfter,
-    imgAlt: "Construction site before and after",
+    imgAlt: "Arcade machine before and after repairs.",
     btnExists: true,
     btnTitle: "Learn More",
     btnURL: "#",
   },
   {
     isRightSection: true,
-    title: "Navigating Projects with Professional Oversight",
+    title: "Consoles",
     subTitle:
-      "Effective project management is at the heart of any successful build. ScrewFast provides thorough planning and robust management services that keep your project on time and within budget. Let us handle the complexities of workflow coordination, resource allocation, and stakeholder communication while you focus on your vision.",
+      "Game consoles face unique challenges, from overheating issues to controller malfunctions. We provide comprehensive repair services, including reflowing, power supply replacement, and internal component fixes, ensuring your console is ready for action.",
     single: false,
     imgOne: constructionWorkers,
-    imgOneAlt: "Construction workers orchestrating a project",
+    imgOneAlt: "Technician working on console internal components.",
     imgTwo: aerialView,
-    imgTwoAlt: "Aerial view of managed construction",
+    imgTwoAlt: "Overview of different consoles being repaired.",
+    btnExists: true,
+    btnTitle: "Learn more",
+    btnURL: "#",
   },
   {
     isRightSection: false,
-    title: "Ensuring Long-lasting Performance",
+    title: "Controllers",
     subTitle:
-      "Our commitment to your project doesn't end at completion. ScrewFast offers ongoing maintenance and support services to ensure your construction's longevity and performance. From regular check-ups to emergency assistance, our responsive team is there to provide seamless support.",
+      "Your gaming experience depends on precise control. Whether it's joystick drift, unresponsive buttons, or connectivity issues, our controller repair services will bring your devices back to life with full functionality.",
     img: usingTools,
     imgAlt:
-      "Man in orange and black vest wearing white helmet holding yellow and black power tool",
+      "Technician disassembling a gaming controller for repairs.",
+    btnExists: true,
+    btnTitle: "Learn more",
+    btnURL: "#",
   },
   {
     isRightSection: true,
-    title: "Crafting Bespoke Strategies for Unique Challenges",
+    title: "Other Electronics",
     subTitle:
-      "For our larger enterprise clients, ScrewFast offers custom solutions designed to meet specific industry challenges. By understanding your unique needs, we engineer tailored strategies aimed at optimizing your operations, enhancing efficiency, and driving your business forward.",
+      "From televisions to audio equipment and home appliances, we repair a wide variety of electronics. Our technicians have the expertise to diagnose and fix issues with power, display, audio, and more, ensuring your devices are performing at their best.",
     single: false,
     imgOne: progressBuilding,
-    imgOneAlt: "In progress building structure",
+    imgOneAlt: "In-progress repair of home electronics.",
     imgTwo: underConstruction,
-    imgTwoAlt: "Brown and gray building under construction",
+    imgTwoAlt: "Technician working on an electronic appliance repair.",
     btnExists: true,
-    btnTitle: "Read more",
+    btnTitle: "Learn more",
     btnURL: "#",
   },
 ];
@@ -100,25 +109,25 @@ const pageTitle: string = `Services | ${SITE.title}`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/services",
-    "url": "https://screwfast.uk/services",
-    "name": "Expert Consultation Services | ScrewFast",
-    "description": "Uniting expertise with your vision, ScrewFast provides exceptional service and comprehensive solutions in the hardware and construction industry, from consultation to project completion.",
+    "@id": "https://thatchertechnologies.uk/services",
+    "url": "https://thatchertechnologies.uk/services",
+    "name": "Expert Consultation Services | ThatcherTechnologies",
+    "description": "Runs electricity? We'll fix it, Thatcher Technologies delivers exceptional service and comprehensive solutions in electronics repair, from diagnosis to full restoration.",
     "isPartOf": {
         "@type": "WebSite",
-        "url": "https://screwfast.uk",
-        "name": "ScrewFast",
-        "description": "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs."
+        "url": "https://thatchertechnologies.uk",
+        "name": "ThatcherTechnologies",
+        "description": "ThatcherTechnologies offers top-tier hardware tools and expert construction services to meet all your project needs."
     },
     "inLanguage": "en-US"
   }}
 >
   <!--MainSection is the introductory section of the page, it also contains a CTA button-->
   <MainSection
-    title="Uniting Expertise with Your Vision"
-    subTitle="At ScrewFast, we take pride in providing comprehensive solutions and exceptional service in the hardware and construction industry. Our experienced team is dedicated to supporting your project from inception to completion with a range of specialized services."
+    title="Runs Electricity? We'll Fix It"
+    subTitle="At ThatcherTechnologies, we take pride in providing comprehensive solutions and exceptional service in the electronics repair industry. Our experienced team is dedicated to supporting your devices from diagnosis to repair, offering a wide range of specialized services to ensure your electronics function at their best."
     btnExists={true}
-    btnTitle="Schedule a Consultation"
+    btnTitle="Schedule a Repair"
     btnURL="#"
   />
   <!-- RightSection and LeftSection contain details about various services along with pertinent imagery.
@@ -157,12 +166,13 @@ const pageTitle: string = `Services | ${SITE.title}`;
       );
     })
   }
+  {/*
   <!--FeaturesStats section showcases essential stats valuable to users-->
   <FeaturesStats
     title="By the Numbers"
-    subTitle="Our commitment to quality and reliability is evident in every project we undertake. At ScrewFast, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
+    subTitle="Our commitment to quality and reliability is evident in every project we undertake. At ThatcherTechnologies, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
     mainStatTitle="96%"
-    mainStatSubTitle="of our clients rate their experience with ScrewFast as exceptional"
+    mainStatSubTitle="of our clients rate their experience with ThatcherTechnologies as exceptional"
     stats={[
       {
         stat: "99.8%",
@@ -178,4 +188,5 @@ const pageTitle: string = `Services | ${SITE.title}`;
       },
     ]}
   />
+  */}
 </MainLayout>
