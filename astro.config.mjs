@@ -6,24 +6,29 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-  // Base path is always `/` since both GitHub Pages and Production use the same root domain.
-  base: "/",
-
-  site: "https://www.thatchertechnologies.com", // Your custom domain (used for generating sitemaps, metadata, etc.)
-
+  // https://docs.astro.build/en/guides/images/#authorizing-remote-images
+  site: "https://www.thatchertechnologies.com",
   image: {
     domains: ["images.unsplash.com"],
   },
-
+  // i18n: {
+  //   defaultLocale: "en",
+  //   locales: ["en", "fr"],
+  //   fallback: {
+  //     fr: "en",
+  //   },
+  //   routing: {
+  //     prefixDefaultLocale: false,
+  //   },
+  // },
   prefetch: true,
-
   integrations: [
     tailwind(),
     sitemap({
       i18n: {
-        defaultLocale: "en",
+        defaultLocale: "en", // All urls that don't contain `fr` after `www.thatchertechnologies.com/` will be treated as default locale, i.e. `en`
         locales: {
-          en: "en",
+          en: "en", // The `defaultLocale` value must present in `locales` keys
           fr: "fr",
         },
       },
@@ -31,6 +36,11 @@ export default defineConfig({
     starlight({
       title: "ThatcherTechnologies Docs",
       defaultLocale: "root",
+      // https://github.com/withastro/starlight/blob/main/packages/starlight/CHANGELOG.md
+      // If no Astro and Starlight i18n configurations are provided, the built-in default locale is used in Starlight and a matching Astro i18n configuration is generated/used.
+      // If only a Starlight i18n configuration is provided, an equivalent Astro i18n configuration is generated/used.
+      // If only an Astro i18n configuration is provided, the Starlight i18n configuration is updated to match it.
+      // If both an Astro and Starlight i18n configurations are provided, an error is thrown.
       locales: {
         root: {
           label: "English",
@@ -43,6 +53,7 @@ export default defineConfig({
         ja: { label: "日本語", lang: "ja" },
         "zh-cn": { label: "简体中文", lang: "zh-CN" },
       },
+      // https://starlight.astro.build/guides/sidebar/
       sidebar: [
         {
           label: "Quick Start Guides",
@@ -89,14 +100,14 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://www.thatchertechnologies.com/social.webp",
+            content: "https://www.thatchertechnologies.com" + "/social.webp",
           },
         },
         {
           tag: "meta",
           attrs: {
             property: "twitter:image",
-            content: "https://www.thatchertechnologies.com/social.webp",
+            content: "https://www.thatchertechnologies.com" + "/social.webp",
           },
         },
       ],
@@ -106,9 +117,7 @@ export default defineConfig({
       brotli: true,
     }),
   ],
-
   output: "static",
-
   experimental: {
     clientPrerender: true,
     directRenderScript: true,
