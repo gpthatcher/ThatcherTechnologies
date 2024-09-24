@@ -7,7 +7,6 @@ import starlight from "@astrojs/starlight";
 // https://astro.build/config
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
-  base: "./",
   site: "https://www.thatchertechnologies.com",
   image: {
     domains: ["images.unsplash.com"],
@@ -27,7 +26,7 @@ export default defineConfig({
     tailwind(),
     sitemap({
       i18n: {
-        defaultLocale: "en", // All urls that don't contain `fr` after `www.thatchertechnologies.com/` will be treated as default locale, i.e. `en`
+        defaultLocale: "en", // All urls that don't contain `fr` after `https://www.thatchertechnologies.com/` will be treated as default locale, i.e. `en`
         locales: {
           en: "en", // The `defaultLocale` value must present in `locales` keys
           fr: "fr",
