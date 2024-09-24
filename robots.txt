@@ -16,4 +16,4 @@ Crawl-delay: 2
 User-agent: *
 Disallow: /
 
-Sitemap: https://thatchertechnologies.uk/sitemap-index.xml
+Sitemap: https://www.thatchertechnologies.com/sitemap-index.xml
