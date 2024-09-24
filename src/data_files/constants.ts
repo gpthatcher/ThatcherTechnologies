@@ -5,7 +5,7 @@ export const SITE = {
   tagline: "Top-quality Hardware Tools",
   description: "ThatcherTechnologies offers top-tier hardware tools and expert construction services to meet all your project needs. Start exploring and contact our sales team for superior quality and reliability.",
   description_short: "ThatcherTechnologies offers top-tier hardware tools and expert construction services to meet all your project needs.",
-  url: "https://thatchertechnologies.uk",
+  url: "https://thatchertechnologies.com",
   author: "Emil Gulamov",
 };
 
